@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FantasyGAA</string>
+    <string name="title_playerselect_list">playerSelect</string>
+    <string name="title_playerselect_detail">playerSelect Detail</string>
 </resources>

@@ -30,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(userTeam);
 
         } else {
-            tv.setText("Email is not valid.");
+            tv.setText("Email is not valid, try again:");
         }
+    }
+
+    public void viewFixtures(View v) {
+        Intent fixtures = new Intent(this, fixturesActivity.class);
+        startActivity(fixtures);
     }
 }
