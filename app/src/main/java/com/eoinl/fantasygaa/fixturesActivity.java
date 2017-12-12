@@ -1,5 +1,6 @@
 package com.eoinl.fantasygaa;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,49 +9,67 @@ import android.widget.Button;
 import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.IOException;
 
 public class fixturesActivity extends AppCompatActivity {
 
-    TextView text1;
+    String url = "https://www.rte.ie/sport/results/gaa/2018/6120/fixtures/";
+    ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixtures);
 
-        text1 = (TextView) findViewById(R.id.tv1);
-        Button button1 = (Button)findViewById(R.id.but1);
+        Button getFixturesBtn = (Button) findViewById(R.id.getFixturesBtn);
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new scrape().execute();
+        // Capture button click
+        getFixturesBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Execute Title AsyncTask
+                new fixtures().execute();
             }
         });
     }
 
-    public class scrape extends AsyncTask<Void,Void,Void> {
+    // Title AsyncTask
+    private class fixtures extends AsyncTask<Void, Void, Void> {
+        String title, date;
 
-        String webPage;
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = new ProgressDialog(fixturesActivity.this);
+            mProgressDialog.setTitle("Android Basic JSoup Tutorial");
+            mProgressDialog.setMessage("Loading...");
+            mProgressDialog.setIndeterminate(false);
+            mProgressDialog.show();
+        }
 
-            try{
-                Document doc = Jsoup.connect("http://www.paddypower.com/bet/gaa-sports/gaa-matches/leinster-championship-hurling-matches").get();
-
-                webPage = doc.text();
-
-            }catch (Exception e){e.printStackTrace();}
-
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                // Connect to the web site
+                Document doc = Jsoup.connect(url).get();
+                // Get the html document title
+                title = doc.title();
+                Elements dates = doc.getAllElements();
+                date = dates.html();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            text1.setText(webPage);
+        protected void onPostExecute(Void result) {
+            // Set title into TextView
+            TextView fixturesTextView = (TextView) findViewById(R.id.tv);
+            //fixturesTextView.setText(title);
+            fixturesTextView.setText(date);
+            mProgressDialog.dismiss();
         }
     }
 }

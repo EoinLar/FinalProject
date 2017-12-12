@@ -10,23 +10,18 @@
     <Button
             android:text="Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/but1" android:layout_marginRight="8dp" app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp" app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"/>
-
-    <ScrollView
-            android:id="@+id/SCROLLER_ID"
-            android:layout_width="384dp"
-            android:layout_height="445dp"
-            android:scrollbars="vertical"
-            android:fillViewport="true" android:layout_marginBottom="8dp">
-
-        <TextView
-                android:text="tv1"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1.0" android:id="@+id/tv1"/>
-    </ScrollView>
+            android:layout_height="wrap_content" android:id="@+id/getFixturesBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent" android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/tv" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/getFixturesBtn" android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent" android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"/>
 </android.support.constraint.ConstraintLayout>
