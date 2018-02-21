@@ -25,6 +25,6 @@ public class client {
 
     public String seeData() {
 
-        return "";
+        return null;
     }
 }
