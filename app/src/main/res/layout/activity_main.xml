@@ -28,9 +28,10 @@
     <Button
             android:text="Button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" tools:layout_editor_absoluteY="41dp"
+            android:layout_height="wrap_content"
             android:id="@+id/button" android:layout_marginRight="8dp" app:layout_constraintRight_toRightOf="parent"
-            android:onClick="checkEmailAddress"/>
+            android:onClick="checkEmailAddress" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"/>
     <Button
             android:text="View Fixtures"
             android:layout_width="0dp"
