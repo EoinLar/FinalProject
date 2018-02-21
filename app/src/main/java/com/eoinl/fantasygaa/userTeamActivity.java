@@ -98,14 +98,14 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
 
     public void selectPlayer(int position) {
 
-        CharSequence colors[] = new CharSequence[] {"Number 1", "Number 2", "Number 3", "Number 4"};
+        CharSequence numbers[] = new CharSequence[] {"Number 1", "Number 2", "Number 3", "Number 4"};
         AlertDialog.Builder builder;
 
         switch (position) {
             case 1:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Goalkeeper Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Goalkeeper Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
@@ -115,8 +115,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 2:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Full Backs Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Full Backs Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
@@ -126,8 +126,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 3:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Half Backs Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Half Backs Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
@@ -137,8 +137,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 4:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Midfield Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Midfield Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
@@ -148,8 +148,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 5:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Half Forward Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Half Forward Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
@@ -159,8 +159,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 6:
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Full Forward Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                builder.setTitle("Full Forward Pick a player");
+                builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
