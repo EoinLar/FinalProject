@@ -107,7 +107,6 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
         final TextView FFselect = (TextView) findViewById(R.id.FFselect);
         final CharSequence numbers[] = new CharSequence[] {"Number 1", "Number 2", "Number 3", "Number 4"};
         final CharSequence players[] = new CharSequence[] {};
-        final String selection = null;
         AlertDialog.Builder builder;
 
         switch (position) {
@@ -116,8 +115,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Goalkeeper Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
+                    public void onClick(DialogInterface dialog, int GKselection) {
+                        // the user clicked on selection
                     }
                 });
                 builder.show();
@@ -127,8 +126,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Full Backs Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
+                    public void onClick(DialogInterface dialog, int FBselection) {
+                        // the user clicked on selection
                     }
                 });
                 builder.show();
@@ -138,8 +137,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Half Backs Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
+                    public void onClick(DialogInterface dialog, int HBselection) {
+                        // the user clicked on selection
                     }
                 });
                 builder.show();
@@ -149,8 +148,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Midfield Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
+                    public void onClick(DialogInterface dialog, int Mselection) {
+                        // the user clicked on selection
                     }
                 });
                 builder.show();
@@ -160,8 +159,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Half Forward Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
+                    public void onClick(DialogInterface dialog, int HFselection) {
+                        // the user clicked on selection
                     }
                 });
                 builder.show();
@@ -171,9 +170,9 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                 builder.setTitle("Full Forward Pick a player");
                 builder.setItems(numbers, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int FFselection) {
                         // the user clicked on colors[which]
-                        FFselect.setText(numbers[which]);
+                        FFselect.setText(numbers[FFselection]);
                     }
                 });
                 builder.show();
