@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".fixturesActivity">
         </activity>
+        <activity android:name=".teamsActivity">
+        </activity>
     </application>
 
 </manifest>

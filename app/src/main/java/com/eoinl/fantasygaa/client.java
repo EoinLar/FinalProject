@@ -24,7 +24,18 @@ public class client {
     }
 
     public String seeData() {
-
-        return null;
+        try{
+            if(output==null || input==null)
+                return "No data";
+            else {
+                output.writeUTF("receive$");
+                String cad = input.readUTF();
+                return cad;
+            }
+        }catch(Exception e){
+            System.out.println("Error occurred");
+            e.printStackTrace();
+        }
+        return "";
     }
 }

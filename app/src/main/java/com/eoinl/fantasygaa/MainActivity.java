@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Dialog box when establishing a connection
-        dialog = ProgressDialog.show(this, "", "Connecting", true);
-        new Connection().execute("");
+        //Dialog box when establishing a connection
+        //dialog = ProgressDialog.show(this, "", "Connecting", true);
+        //new Connection().execute("");
+
     }
 
     // Checks entered email to see if its in correct format ( x@y.z )
@@ -48,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(fixtures);
     }
 
+    // Opens teams activity page to display list of county teams from database
+    public void viewTeams(View v) {
+        Intent teams = new Intent(this, teamsActivity.class);
+        startActivity(teams);
+    }
+
+    /*
     // Connect to server using aSync task.
     private class Connection extends AsyncTask<String, Void, String> {
 
@@ -66,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
             dialog.dismiss();
         }
     }
+    */
+
 }

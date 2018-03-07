@@ -7,9 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class userTeamActivity extends AppCompatActivity implements View.OnClickListener{
+
+    //TextView FFselect = (TextView) findViewById(R.id.FFselect);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
         cffBtn.setOnClickListener(this);
         Button rffBtn = (Button) findViewById(R.id.btnRFF);
         rffBtn.setOnClickListener(this);
+        ImageButton imageBtn1 = (ImageButton) findViewById(R.id.imageBtn1);
+        imageBtn1.setOnClickListener(this);
     }
 
     //implement the onClick method here
@@ -88,6 +93,7 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btnLFF:
             case R.id.btnCFF:
             case R.id.btnRFF:
+            case R.id.imageBtn1:
                 //Open Full Forward menu, position 6
                 selectPlayer(6);
                 break;
@@ -98,7 +104,10 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
 
     public void selectPlayer(int position) {
 
-        CharSequence numbers[] = new CharSequence[] {"Number 1", "Number 2", "Number 3", "Number 4"};
+        final TextView FFselect = (TextView) findViewById(R.id.FFselect);
+        final CharSequence numbers[] = new CharSequence[] {"Number 1", "Number 2", "Number 3", "Number 4"};
+        final CharSequence players[] = new CharSequence[] {};
+        final String selection = null;
         AlertDialog.Builder builder;
 
         switch (position) {
@@ -164,6 +173,7 @@ public class userTeamActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // the user clicked on colors[which]
+                        FFselect.setText(numbers[which]);
                     }
                 });
                 builder.show();
